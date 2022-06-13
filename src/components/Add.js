@@ -17,28 +17,28 @@ const Add = (props) =>{
 
     return (
         <>
-            <details>
+            <details className='add'>
             <summary>Add Guide</summary>
-                <form className='add' onSubmit={handleSubmit}>
-                <label htmlFor="title">Title: </label>
-                <input type="text" name="title" value={guide.title} onChange={handleChange} />
+                <form className='add-form' onSubmit={handleSubmit}>
+                <label htmlFor="title">Title:
+                <input type="text" name="title" value={guide.title} onChange={handleChange} />  </label>
                 <br/>
-                <label htmlFor="subject">Subject: </label>
-                <input type="text" name="subject" value={guide.subject} onChange={handleChange} />
+                <label htmlFor="subject">Subject: 
+                <input type="text" name="subject" value={guide.subject} onChange={handleChange} /></label>
                 <br/>
-                <label htmlFor="category">category: </label>
-                <input type="text" name="category" value={guide.category} onChange={handleChange} />
+                <label htmlFor="category">Category:
+                <input type="text" name="category" value={guide.category} onChange={handleChange} /> </label>
                 <br/>
-                <label htmlFor="author">Author: </label>
-                <input type="text" name="author" value={guide.author} onChange={handleChange}/>
+                <label htmlFor="author">Author: 
+                <input type="text" name="author" value={guide.author} onChange={handleChange}/></label>
                 <br/>
-                <label htmlFor="length">Length: </label>
-                <input type="number" name="length" value={guide.length} onChange={handleChange} />
+                <label htmlFor="length">Length: 
+                <input type="number" name="length" value={guide.length} onChange={handleChange} /></label>
                 <br/>
-                <label htmlFor="link">Video Link: </label>
-                <input type="url" name="link" value={guide.link} onChange={handleChange} />
+                <label htmlFor="link">Link: 
+                <input type="url" name="link" value={guide.link} onChange={handleChange} /></label>
                 <br/>
-                    <input type="submit"/>
+                    <label><input className='submit-btn' type="submit"/></label>
                 </form>
             </details>
         </>

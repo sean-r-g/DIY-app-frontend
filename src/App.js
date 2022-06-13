@@ -40,7 +40,7 @@ function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
+      <h1>[Working Title....]</h1>
       <Add handleCreate={handleCreate}/>
       <div className='guides-container'>
         {guides.map((guide)=>{
@@ -53,9 +53,8 @@ function App() {
               <h5>Length: {guide.length} min</h5>
               <iframe className='video' src={guide.link} title={guide.title}></iframe>
               <br/>
-              <Edit handleUpdate={handleUpdate} guide={guide}/>
+              <Edit handleUpdate={handleUpdate} handleDelete={handleDelete} guide={guide}/>
               <br/>
-              <button onClick={(event) =>{handleDelete(event, guide)}} value={guide.id}>Remove</button>
             </div>
           )
         })}
