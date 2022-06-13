@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
 const Edit = (props) =>{
-    
+
     let emptyGuide = {title: '', subject: '', category: '', author: '', length: 0, link: ''}
     const [guide, setGuide] = useState({...props.guide})
 
@@ -36,7 +36,7 @@ const Edit = (props) =>{
                 <label htmlFor="link">Video Link: </label>
                 <input type="url" name="link" value={guide.link} onChange={handleChange} />
                 <br/>
-                <input type="submit"/>
+                <input type="submit" value="Save Changes"/>
             </form>
         </details>
     )

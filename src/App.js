@@ -46,7 +46,7 @@ function App() {
         {guides.map((guide)=>{
           return (
             <div className='guide-card'>
-              <h4>{guide.title}</h4>
+              <h4><a href={guide.link}>{guide.title}</a></h4>
               <h5>Subject: {guide.subject}</h5>
               <h5>Category: {guide.category}</h5>
               <h5>Creator: {guide.author}</h5>
