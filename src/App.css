@@ -153,3 +153,6 @@ button:hover {
 .carousel-control-prev-icon, .carousel-control-prev-icon {
   opacity: 1;
 }
+#clear-filter {
+  background-color: azure;
+}

@@ -50,6 +50,25 @@ function App() {
     setShowAbout(false)
   }
 
+  const filterHome = () => {
+    setGuides(guides.filter(guide => guide.category == 'Home'))
+  }
+  const filterAuto = () => {
+
+    setGuides(guides.filter(guide => guide.category == 'Auto'))
+  }
+  const filterCooking = () => {
+    setGuides(guides.filter(guide => guide.category == 'Cooking'))
+  }
+  const filterCrafts = () => {
+    setGuides(guides.filter(guide => guide.category == 'Crafts'))
+  }
+  const filterOutdoor = () => {
+    setGuides(guides.filter(guide => guide.category == 'Outdoor'))
+  }
+  const clearFilter = () => {
+    getGuides()
+  }
 
 
   useEffect(()=>{
@@ -69,11 +88,12 @@ function App() {
       {showAbout ? <HeroSlider guides={guides}/> : null}
       {showAll ? <div className='cat-btns'>
         <h2>Filter:</h2>
-        <button>Home</button>
-        <button>Outdoor</button>
-        <button>Auto</button>
-        <button>Crafts</button>
-        <button>Appliances</button>
+        <button  id='clear-filter' onClick={clearFilter}>Clear Filter</button>
+        <button onClick={filterHome}>Home</button>
+        <button onClick={filterOutdoor}>Outdoor</button>
+        <button onClick={filterAuto}>Auto</button>
+        <button onClick={filterCrafts}>Crafts</button>
+        <button onClick={filterCooking}>Kitchen</button>
        </div> : null}
      {showAll ? 
      <div className='guides-container'>
