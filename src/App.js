@@ -67,7 +67,16 @@ function App() {
       </div>
       <Add handleCreate={handleCreate}/>
       {showAbout ? <HeroSlider guides={guides}/> : null}
-     {showAll ? <div className='guides-container'>
+      {showAll ? <div className='cat-btns'>
+        <h2>Filter:</h2>
+        <button>Home</button>
+        <button>Outdoor</button>
+        <button>Auto</button>
+        <button>Crafts</button>
+        <button>Appliances</button>
+       </div> : null}
+     {showAll ? 
+     <div className='guides-container'>
         {guides.map((guide)=>{
           return (
             <div className='guide-card'>

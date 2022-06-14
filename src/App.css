@@ -45,6 +45,13 @@ body {
   flex: 0 0 300px;
   margin-left: 10px;
 }
+.cat-btns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
 .guides-container {
   display: flex;
   flex-direction: row;
