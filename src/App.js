@@ -10,7 +10,10 @@ import HeroSlider from './components/Carousel'
 function App() {
 
   const [guides, setGuides] = useState([])
+  const [showAbout, setShowAbout] = useState(true)
+  const [showAll, setShowAll] = useState(false)
 
+//////CRUD Functions///////////
   const getGuides = () => {
     axios.get('http://localhost:8000/guides').then((response)=>{
       setGuides(response.data)
@@ -35,6 +38,20 @@ function App() {
     })
   }
 
+  //////Display Toggles///////
+
+  const toggleAbout = () => {
+    setShowAbout(true)
+    setShowAll(false)
+  }
+
+  const toggleShowAll = () => {
+    setShowAll(true)
+    setShowAbout(false)
+  }
+
+
+
   useEffect(()=>{
     getGuides()
   }, [])
@@ -44,9 +61,13 @@ function App() {
     <div className='main-div'>
       <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet"></link>
       <h1>[Working Title....]</h1>
+      <div id='top-btns'>
+        <button onClick={toggleAbout}>About</button>
+        <button onClick={toggleShowAll}>All Guides</button>
+      </div>
       <Add handleCreate={handleCreate}/>
-      <HeroSlider guides={guides}/>
-      <div className='guides-container'>
+      {showAbout ? <HeroSlider guides={guides}/> : null}
+     {showAll ? <div className='guides-container'>
         {guides.map((guide)=>{
           return (
             <div className='guide-card'>
@@ -56,13 +77,11 @@ function App() {
               <p>Category: {guide.category}</p>
               <p>Creator: {guide.author}</p>
               <p>Length: {guide.length} min</p>
-              <br/>
               <Edit handleUpdate={handleUpdate} handleDelete={handleDelete} guide={guide}/>
-              <br/>
             </div>
           )
         })}
-      </div>
+      </div> : null }
     </div>
   );
 }
