@@ -12,7 +12,6 @@ function App() {
   const [guides, setGuides] = useState([])
   const [showAbout, setShowAbout] = useState(true)
   const [showAll, setShowAll] = useState(false)
-
 //////CRUD Functions///////////
   const getGuides = () => {
     axios.get('http://localhost:8000/guides').then((response)=>{
@@ -87,13 +86,16 @@ function App() {
       <Add handleCreate={handleCreate}/>
       {showAbout ? <HeroSlider guides={guides}/> : null}
       {showAll ? <div className='cat-btns'>
-        <h2>Filter:</h2>
-        <button  id='clear-filter' onClick={clearFilter}>Clear Filter</button>
-        <button onClick={filterHome}>Home</button>
-        <button onClick={filterOutdoor}>Outdoor</button>
-        <button onClick={filterAuto}>Auto</button>
-        <button onClick={filterCrafts}>Crafts</button>
-        <button onClick={filterCooking}>Kitchen</button>
+        <details id='filter-menu'>
+        <summary><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADfElEQVRoge2aT2gcVRzHP7/dxLAGI2KxscmCIlJR8FSqmH9V3LQGKyKloCCKFArqQfRa0aNexCLoxYMiKFToodSo8eJmXgKW5qK0KKWonZk01UohNcY02f162N2a7p+s2cxuprKfy+PNe+/3+3737Zt5jxloEy9sdUWB84DBTdKyXpz1Dw6VKomyxuvFBJRp7ajWw/oHrdr1uKDAqfxa+YwUO353a/PlNEYtbeVGZgrFlXH97m5qsqZ1U9B0ZbxYnVnddq2RDhsDfgLbyRJfau7r7hZprIv86RRLHAPbCZxlJb93dfs1Rqx34DcslwF+BQZY7j6qM+NdLdRbFZ082YnpCLALCOnIZeyO4fOr+1SsEesb8VEuA1zAGCXV86l0JNkizRVISrB16WPQ48BFkvlR6x35ubxf1cVu6ZEzKD8KXAKeItz2oaSW38kkGeHU+5ieRsyT0B67ffh0tb5VjQBYevh7YAz4E3ieWfduk/TWJnBvAQeBRWR7bdvQTL0hNVHoParA/a3ASYF3KDKR9fIG7vVCTrck341FE3R28kkFbrlo5rVIgq6VL/ReKppYUeD2Rxs88J5V4HIKXF6+OxBp8FbnaeovRYtnvin/XTZpLcr33i6a+UvnpoY3HC9wDypwlxU4KfQONxKjoWdD8f7+AXAQMU9SjzR6a5Q/eT+W+Ba4BfiIvoEXzKxid1uPms+RtTAz0TfwIrLPMHrI21c6P3nveuPIz96NJSYomDhK3+yBRkxAg0YAzCzPha7nwI4DW8glJjSXvfO/jleYTWPJb4CtiAkW558x259rWE+jA68K8qdTWH6cwobuLCv5ofINXcWYuanbWNEksB2YomNht/XuXtiIjoZnpISlH1qkiydAJ4C76Ewcqzsopy+A7aATdPHYRk1ABDNSonByW74I9Y/K/x5VO7dY/wN/RJF/wzNSohFBUZmACI1sNm0jcaNtJG60jcSNtpG40TYSN9pG4kbbSNxoihGFLtOMuGsRsRFNFwomFHifK8ymo41fm2iNzKV2Ib0CXAbbh5I/yvfebMVbr0iN2I4dy5YeOkyee8A+AW7E7A1SN/8g39sTZa6K3M0MrsA9jPEe4r5iuuMkeJm8foFo3+c3/XWaTp26gZ5Lr2IcArqBhWJ5fRkpoTCbRol3wPZdTR7zLyzWRKHLKPBOFz/gafO/5R95bZ+BwA/shAAAAABJRU5ErkJggg=="/></summary>
+          {/* <h2>Filter:</h2> */}
+          <button  id='clear-filter' onClick={clearFilter}>Clear Filter</button>
+          <button onClick={filterHome}>Home</button>
+          <button onClick={filterOutdoor}>Outdoor</button>
+          <button onClick={filterAuto}>Auto</button>
+          <button onClick={filterCrafts}>Crafts</button>
+          <button onClick={filterCooking}>Kitchen</button>
+        </details>
        </div> : null}
      {showAll ? 
      <div className='guides-container'>
