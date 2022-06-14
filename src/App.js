@@ -4,6 +4,8 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Add from './components/Add'
 import Edit from './components/Edit'
+// import Intro from './components/Intro'
+import HeroSlider from './components/Carousel'
 
 function App() {
 
@@ -39,10 +41,11 @@ function App() {
 
 
   return (
-    <>
+    <div className='main-div'>
       <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet"></link>
       <h1>[Working Title....]</h1>
       <Add handleCreate={handleCreate}/>
+      <HeroSlider guides={guides}/>
       <div className='guides-container'>
         {guides.map((guide)=>{
           return (
@@ -60,7 +63,7 @@ function App() {
           )
         })}
       </div>
-    </>
+    </div>
   );
 }
 

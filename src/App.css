@@ -6,7 +6,13 @@ body {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: larger;
 }
-h1 {
+.main-div {
+  color: bisque;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: larger;
+  margin-bottom: 30px;
+}
+.main-div h1 {
   text-align: center;
 }
 .guides-container {
@@ -43,8 +49,9 @@ h1 {
 .add summary{
   list-style-type: '+ ';
   margin-bottom: 20px;
+  font-size: 28px;
 }
-.add-form label{
+.main-add-form label{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -53,12 +60,12 @@ h1 {
   line-height: 26px;
   margin-bottom: 10px;
 }
-.add-form input {
-  height: 20px;
+.main-add-form input {
+  height: 30px;
   flex: 0 0 300px;
   margin-left: 10px;
 }
-.edit-form label{
+.main-edit-form label{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -66,8 +73,8 @@ h1 {
   width: 285px;
   line-height: 26px;
 }
-.edit-form input {
-  height: 20px;
+.main-edit-form input {
+  height: 30px;
   flex: 0 0 200px;
   margin-left: 10px;
 }
@@ -89,4 +96,22 @@ h1 {
   width: auto;
   margin-left: auto;
   margin-right: auto;
+}
+#slide-title {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.carousel-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.slides-iframe {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 600px;
+  height: 400px;
 }

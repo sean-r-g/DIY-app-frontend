@@ -17,7 +17,7 @@ const Edit = (props) =>{
     return (
         <details className='edit'>
         <summary><img id='edit-icon' src="https://img.icons8.com/ios/50/undefined/edit--v1.png"/></summary>
-            <form className='edit-form' onSubmit={handleSubmit}>
+            <form className='main-edit-form' onSubmit={handleSubmit}>
                 <label htmlFor="title">Title:
                 <input type="text" name="title" value={guide.title} onChange={handleChange} />  </label>
                 <br/>

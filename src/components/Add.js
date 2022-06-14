@@ -19,7 +19,7 @@ const Add = (props) =>{
         <>
             <details className='add'>
             <summary>Add Guide</summary>
-                <form className='add-form' onSubmit={handleSubmit}>
+                <form className='main-add-form' onSubmit={handleSubmit}>
                 <label htmlFor="title">Title:
                 <input type="text" name="title" value={guide.title} onChange={handleChange} />  </label>
                 <br/>
