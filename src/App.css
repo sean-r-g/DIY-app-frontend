@@ -3,6 +3,8 @@ body {
   background-image: url('https://images.wallpaperscraft.com/image/single/background_tools_drawings_patterns_18527_2560x1440.jpg');
   background-color: rgb(84, 84, 232);
   color: bisque;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: larger;
 }
 h1 {
   text-align: center;
@@ -34,6 +36,9 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+.guide-card h3{
+  text-decoration: underline;
 }
 .add summary{
   list-style-type: '+ ';

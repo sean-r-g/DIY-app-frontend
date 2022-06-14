@@ -40,18 +40,19 @@ function App() {
 
   return (
     <>
+      <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet"></link>
       <h1>[Working Title....]</h1>
       <Add handleCreate={handleCreate}/>
       <div className='guides-container'>
         {guides.map((guide)=>{
           return (
             <div className='guide-card'>
-              <h4><a href={guide.link}>{guide.title}</a></h4>
-              <h5>Subject: {guide.subject}</h5>
-              <h5>Category: {guide.category}</h5>
-              <h5>Creator: {guide.author}</h5>
-              <h5>Length: {guide.length} min</h5>
+              <h3><a href={guide.link}>{guide.title}</a></h3>
               <iframe className='video' src={guide.link} title={guide.title}></iframe>
+              <p>Subject: {guide.subject}</p>
+              <p>Category: {guide.category}</p>
+              <p>Creator: {guide.author}</p>
+              <p>Length: {guide.length} min</p>
               <br/>
               <Edit handleUpdate={handleUpdate} handleDelete={handleDelete} guide={guide}/>
               <br/>
