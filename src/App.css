@@ -26,6 +26,9 @@ body {
 #top-btns button{
   margin-right: 15px;
 }
+.add {
+  width: fit-content;
+}
 .add summary{
   list-style-type: '+ ';
   margin-bottom: 20px;
