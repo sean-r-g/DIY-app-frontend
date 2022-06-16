@@ -19,7 +19,7 @@ const HeroSlider = (props) => {
     setIndex(selectedIndex);
   };
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
+    <Carousel id='carousel' activeIndex={index} onSelect={handleSelect}>
       {props.guides.map((guides, index) => {
         {
           getNumberLength(guides);

@@ -1,5 +1,5 @@
 body {
-  padding: 10px;
+  /* padding: 10px; */
   background-image: url('https://images.wallpaperscraft.com/image/single/background_tools_drawings_patterns_18527_2560x1440.jpg');
   background-color: rgb(84, 84, 232);
   color: bisque;
@@ -15,6 +15,23 @@ body {
 .main-div h1 {
   text-align: center;
 }
+header {
+  background-color: #e3e8f8;
+  background-image: linear-gradient(to top,#2f426b, #3e588f, #4e6eb2, #e3e8f8);
+  margin-bottom: 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  height: 80px;
+}
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  border-radius: 25px;
+}
 #top-btns {
   position: absolute;
   top: 0;
@@ -25,6 +42,7 @@ body {
 }
 #top-btns button{
   margin-right: 15px;
+  font-size: 16px;
 }
 #addmodal {
   background-color: bisque;
@@ -34,6 +52,9 @@ body {
 }
 #modaltitle {
   text-align: center;
+}
+#carousel {
+  margin-top: 200px;
 }
 .add {
   width: fit-content;
@@ -75,6 +96,8 @@ button:hover {
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 20px;
+  margin-top: 100px;
+  margin-left: 20px;
   border: 1px solid bisque;
   padding: 5px;
   width: fit-content;
@@ -87,7 +110,6 @@ button:hover {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 15px;
 }
 .guide-card {
   padding: 8px;
@@ -117,6 +139,7 @@ button:hover {
 }
 .guide-card h3{
   text-decoration: underline;
+  text-align: center;
 }
 .main-edit-form label{
   display: flex;

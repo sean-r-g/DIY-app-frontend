@@ -13,7 +13,7 @@ function App() {
   const [guides, setGuides] = useState([])
   const [showAbout, setShowAbout] = useState(true)
   const [showAll, setShowAll] = useState(false)
-  const [searchInput, setSearchInput] = useState()
+  const [searchInput, setSearchInput] = useState('')
 //////CRUD Functions///////////
   const getGuides = () => {
     axios.get('http://localhost:8000/guides').then((response)=>{
@@ -65,7 +65,7 @@ function App() {
       setSearchInput(event.target.value)
       if (searchInput.length > 0) {
         setGuides(guides.filter(guide => guide.title.toLowerCase().includes(searchInput.toLowerCase())))
-    } else if (searchInput.length == 0){
+    } else {
       getGuides()
     }
   }
@@ -80,13 +80,15 @@ function App() {
   return (
     <div className='main-div'>
       <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet"></link>
-      <h1>[Working Title....]</h1>
+      <header>  
+      <img id='logo' src='https://i.imgur.com/6CBFHun.png'/>
       <div id='top-btns'>
         <button onClick={toggleAbout}>About</button>
         <button onClick={toggleShowAll}>All Guides</button>
         <AddModal handleCreate={handleCreate}/>
       </div>
-      <Add handleCreate={handleCreate}/>
+      </header>
+      {/* <Add handleCreate={handleCreate}/> */}
       {showAbout ? <HeroSlider guides={guides}/> : null}
       {showAll ? <div className='cat-btns'>
         <form>
