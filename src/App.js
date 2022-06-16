@@ -6,7 +6,7 @@ import Add from './components/Add'
 import Edit from './components/Edit'
 // import Intro from './components/Intro'
 import HeroSlider from './components/Carousel'
-// import Search from './components/Search'
+import AddModal from './components/AddModal'
 
 function App() {
 
@@ -84,6 +84,7 @@ function App() {
       <div id='top-btns'>
         <button onClick={toggleAbout}>About</button>
         <button onClick={toggleShowAll}>All Guides</button>
+        <AddModal handleCreate={handleCreate}/>
       </div>
       <Add handleCreate={handleCreate}/>
       {showAbout ? <HeroSlider guides={guides}/> : null}

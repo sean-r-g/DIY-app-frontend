@@ -26,6 +26,15 @@ body {
 #top-btns button{
   margin-right: 15px;
 }
+#addmodal {
+  background-color: bisque;
+  color: black;
+  font-size: 18px;
+  padding: 2px;
+}
+#modaltitle {
+  text-align: center;
+}
 .add {
   width: fit-content;
 }
