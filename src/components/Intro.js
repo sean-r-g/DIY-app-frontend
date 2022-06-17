@@ -7,7 +7,10 @@ const Intro = (props) => {
 
     return (
         <>
-            <HeroSlider guides={guides}/>
+            <div className='intro-div'>
+                <h3>Intro....</h3>
+                <h4>More words.....</h4>
+            </div>
         </>
     )
 }

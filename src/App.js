@@ -7,6 +7,7 @@ import Edit from './components/Edit'
 // import Intro from './components/Intro'
 import HeroSlider from './components/Carousel'
 import AddModal from './components/AddModal'
+import Intro from './components/Intro'
 
 function App() {
 
@@ -83,12 +84,13 @@ function App() {
       <header>  
       <img id='logo' src='https://i.imgur.com/6CBFHun.png'/>
       <div id='top-btns'>
-        <button onClick={toggleAbout}>About</button>
+        <button onClick={toggleAbout}>Home</button>
         <button onClick={toggleShowAll}>All Guides</button>
         <AddModal handleCreate={handleCreate}/>
       </div>
       </header>
       {/* <Add handleCreate={handleCreate}/> */}
+      {showAbout ? <Intro/> : null}
       {showAbout ? <HeroSlider guides={guides}/> : null}
       {showAll ? <div className='cat-btns'>
         <form>
