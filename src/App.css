@@ -56,14 +56,14 @@ header {
 #carousel {
   margin-top: 200px;
 }
-.add {
+/* .add {
   width: fit-content;
 }
 .add summary{
   list-style-type: '+ ';
   margin-bottom: 20px;
   font-size: 22px;
-}
+} */
 .main-add-form label{
   display: flex;
   flex-direction: row;
