@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState, useEffect} from 'react'
+import {useRef, useState, useEffect} from 'react'
 import axios from 'axios'
 import Add from './components/Add'
 import Edit from './components/Edit'
@@ -8,6 +8,7 @@ import Edit from './components/Edit'
 import HeroSlider from './components/Carousel'
 import AddModal from './components/AddModal'
 import Intro from './components/Intro'
+import Login from './components/Login'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
   const [showAbout, setShowAbout] = useState(true)
   const [showAll, setShowAll] = useState(false)
   const [searchInput, setSearchInput] = useState('')
+  const userRef = useRef();
 //////CRUD Functions///////////
   const getGuides = () => {
     axios.get('http://localhost:8000/guides').then((response)=>{
@@ -75,6 +77,7 @@ function App() {
 
   useEffect(()=>{
     getGuides()
+    // userRef.current.focus()
   }, [])
 
 
@@ -87,6 +90,7 @@ function App() {
         <button onClick={toggleAbout}>Home</button>
         <button onClick={toggleShowAll}>All Guides</button>
         <AddModal handleCreate={handleCreate}/>
+        <Login/>
       </div>
       </header>
       {/* <Add handleCreate={handleCreate}/> */}

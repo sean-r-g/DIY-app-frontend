@@ -58,10 +58,9 @@ header {
 }
 .intro-div {
   margin-top: 100px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* .add {
   width: fit-content;
