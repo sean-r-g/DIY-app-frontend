@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useRef, useState, useEffect} from 'react'
+import {useRef, useState, useEffect, useImperativeHandle} from 'react'
 import axios from 'axios'
 import Add from './components/Add'
 import Edit from './components/Edit'
@@ -16,7 +16,7 @@ function App() {
   const [showAbout, setShowAbout] = useState(true)
   const [showAll, setShowAll] = useState(false)
   const [searchInput, setSearchInput] = useState('')
-  const userRef = useRef();
+  const [user, setUser] = useState("");
 //////CRUD Functions///////////
   const getGuides = () => {
     axios.get('http://localhost:8000/guides').then((response)=>{
@@ -90,8 +90,9 @@ function App() {
         <button onClick={toggleAbout}>Home</button>
         <button onClick={toggleShowAll}>All Guides</button>
         <AddModal handleCreate={handleCreate}/>
-        <Login/>
+        <Login user={user} setUser={setUser}/>
       </div>
+      <h5>Welcome, {user}</h5>
       </header>
       {/* <Add handleCreate={handleCreate}/> */}
       {showAbout ? <Intro/> : null}

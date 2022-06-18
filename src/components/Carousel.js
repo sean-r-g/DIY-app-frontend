@@ -15,7 +15,6 @@ const HeroSlider = (props) => {
   // boostrap
   const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex, event) => {
-    console.log(selectedIndex);
     setIndex(selectedIndex);
   };
   return (
