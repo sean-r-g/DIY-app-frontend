@@ -72,6 +72,10 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
     console.log(e.target.value);
   };
 
+  const toggleCreateAcct = () => {
+    setSignedUp(true)
+  }
+
   return (
     <>
     <button id='loginmodal' variant="primary" onClick={handleShow}>
@@ -162,8 +166,11 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
                   required
                 />
                 <br/>
+                <br/>
                 <button>Sign in</button>
               </form>
+              <br/>
+              <button onClick={toggleCreateAcct}>Create Account</button>
             </section>
           ) : (
             <>

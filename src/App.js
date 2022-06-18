@@ -90,7 +90,7 @@ function App() {
       <div id='top-btns'>
         <button onClick={toggleAbout}>Home</button>
         <button onClick={toggleShowAll}>All Guides</button>
-        <AddModal handleCreate={handleCreate}/>
+        {loggedIn ? <AddModal handleCreate={handleCreate}/> : null}
         <Login user={user} setUser={setUser} loggedIn={loggedIn} setLogin={setLogin}/>
       </div>
       {loggedIn ? <h5>Welcome, {user}</h5> : null}
