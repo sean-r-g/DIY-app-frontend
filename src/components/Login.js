@@ -3,10 +3,10 @@ import { useRef, useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 
-const Login = (props) => {
+const Login = ({user, setUser}) => {
 
   const userRef = useRef();
-  const [user, setUser] = useState("");
+//   const [user, setUser] = useState("");
   const [userInfo, setUserInfo] = useState({});
   const [token, setToken] = useState();
   const [email, setEmail] = useState("");
@@ -156,6 +156,7 @@ const Login = (props) => {
             <section>
               <form onSubmit={handleSignIn}>
                 <label htmlFor="Username">Username:</label>
+                <br/>
                 <input
                   type="text"
                   id="username"
@@ -167,7 +168,9 @@ const Login = (props) => {
                   value={user}
                   required
                 />
+                <br/>
                 <label htmlFor="password">Password:</label>
+                <br/>
                 <input
                   type="password"
                   id="password"
@@ -177,6 +180,7 @@ const Login = (props) => {
                   value={pwd}
                   required
                 />
+                <br/>
                 <button>Sign in</button>
               </form>
             </section>
@@ -185,9 +189,6 @@ const Login = (props) => {
               <h1> You're Logged in as {user}!</h1>
               <button onClick={getUserInfo}>My Info</button>
               <button onClick={handleSignOut}>Sign Out</button>
-              <button value="strawberries" onClick={addToList}>
-                strawberries
-              </button>
             </>
           )}
         </>
