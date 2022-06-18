@@ -17,6 +17,7 @@ function App() {
   const [showAll, setShowAll] = useState(false)
   const [searchInput, setSearchInput] = useState('')
   const [user, setUser] = useState("");
+  const [loggedIn, setLogin] = useState(false);
 //////CRUD Functions///////////
   const getGuides = () => {
     axios.get('http://localhost:8000/guides').then((response)=>{
@@ -90,9 +91,9 @@ function App() {
         <button onClick={toggleAbout}>Home</button>
         <button onClick={toggleShowAll}>All Guides</button>
         <AddModal handleCreate={handleCreate}/>
-        <Login user={user} setUser={setUser}/>
+        <Login user={user} setUser={setUser} loggedIn={loggedIn} setLogin={setLogin}/>
       </div>
-      <h5>Welcome, {user}</h5>
+      {loggedIn ? <h5>Welcome, {user}</h5> : null}
       </header>
       {/* <Add handleCreate={handleCreate}/> */}
       {showAbout ? <Intro/> : null}

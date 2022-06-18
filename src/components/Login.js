@@ -3,24 +3,19 @@ import { useRef, useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 
-const Login = ({user, setUser}) => {
+const Login = ({user, setUser, loggedIn, setLogin}) => {
 
   const userRef = useRef();
-//   const [user, setUser] = useState("");
   const [userInfo, setUserInfo] = useState({});
   const [token, setToken] = useState();
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [signedUp, setSignedUp] = useState(false);
-  const [loggedIn, setLogin] = useState(false);
+//   const [loggedIn, setLogin] = useState(false);
   const [show, setShow] = useState(false);
   
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-//   useEffect(() => {
-//     userRef.current.focus();
-//   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,20 +33,6 @@ const Login = ({user, setUser}) => {
       });
   };
 
-  // const updateToke = async () => {
-  //   let response = await fetch("http://localhost:8000/token/refresh/", {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body:JSON.stringify({'refresh': authTokens.refresh})
-  //   });
-  //   let data = await response.json()
-
-  //   if (response.stats === 200) {
-
-  //   }
-  // }
 
   const handleSignIn = async (e) => {
     e.preventDefault();
