@@ -1,9 +1,13 @@
+import {Modal, Button} from 'react-bootstrap'
 import {useState} from 'react'
 
-const Edit = (props) =>{
-
+const AddModal = (props) => {
+    const [show, setShow] = useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     let emptyGuide = {title: '', subject: '', category: '', author: '', length: 0, link: ''}
-    const [guide, setGuide] = useState({...props.guide})
+    const [guide, setGuide] = useState(emptyGuide)
 
     const handleChange = (event) =>{
         setGuide({...guide, [event.target.name]: event.target.value})
@@ -11,13 +15,23 @@ const Edit = (props) =>{
 
     const handleSubmit = (event) =>{
         event.preventDefault()
-        props.handleUpdate(guide)
+        props.handleCreate(guide)
+        setGuide(emptyGuide)
     }
 
+
     return (
-        <details className='edit'>
-        <summary><img id='edit-icon' src="https://img.icons8.com/ios/50/undefined/edit--v1.png"/></summary>
-            <form className='main-edit-form' onSubmit={handleSubmit}>
+      <>
+        <button id='addmodal' variant="primary" onClick={handleShow}>
+          + Add Guide
+        </button>
+  
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title id='modaltitle'>Add New DIY Guide</Modal.Title>
+          </Modal.Header>
+          <Modal.Body id='modalbody'>
+                <form className='main-add-form' onSubmit={handleSubmit}>
                 <label htmlFor="title">Title:
                 <input type="text" name="title" value={guide.title} onChange={handleChange} />  </label>
                 <br/>
@@ -36,12 +50,19 @@ const Edit = (props) =>{
                 <label htmlFor="link">Link: 
                 <input type="url" name="link" value={guide.link} onChange={handleChange} /></label>
                 <br/>
-                <input className='submit-btn' type="submit" value='Save Changes'/>
-                </form>
-                <br/>
-                <button className='submit-btn' onClick={(event) =>{props.handleDelete(event, guide)}} value={guide.id}>Remove</button>
-        </details>
-    )
-}
-
-export default Edit
+                    <label><input className='submit-btn' type="submit"/></label>
+                </form></Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            {/* <Button variant="primary" onClick={handleClose}>
+              Save Changes
+            </Button> */}
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  }
+  
+export default AddModal
