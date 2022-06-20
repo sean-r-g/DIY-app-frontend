@@ -27,14 +27,14 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
         email: email,
         password: pwd,
       })
-      .catch((err) => {
-        return alert(`${user} already exists. Please pick another username.`);
-      })
       .then((response, err) => {
         console.log(response);
         alert(response.data.message);
         setSignedUp(true);
-      });
+      })
+        .catch((err) => {
+        return alert(`${user} already exists. Please pick another username.`);
+      })
   };
 
 
@@ -47,16 +47,16 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
         username: user,
         password: pwd,
       })
-      .catch((err) => {
-        return alert(`Wrong username or password. Try again...`);
-      })
       .then((response) => {
         let accessToken = localStorage.setItem("token", response.data.access);
         let decodedToken = jwt_decode(response.data.access);
         setToken(localStorage.getItem("token", accessToken));
         setUserInfo(decodedToken);
         setLogin(true);
-      });
+      })
+      .catch((err) => {
+        return alert(`Wrong username or password. Try again...`);
+      })
   };
 
   const getUserInfo = () => {
