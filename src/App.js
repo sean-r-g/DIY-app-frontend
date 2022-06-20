@@ -20,28 +20,28 @@ function App() {
 //////CRUD Functions///////////
   const getGuides = () => {
     // axios.get('http://localhost:8000/guides').then((response)=>{
-    axios.get('https://diyfrontend.herokuapp.com/guides').then((response)=>{
+    axios.get('https://diybackend.herokuapp.com/guides').then((response)=>{
       setGuides(response.data)
     })
   }
 
   const handleCreate = (addGuide) => {
     // axios.post('http://localhost:8000/guides', addGuide).then((response)=>{
-  axios.post('https://diyfrontend.herokuapp.com/guides', addGuide).then((response)=>{  
+  axios.post('https://diybackend.herokuapp.com/guides', addGuide).then((response)=>{  
       getGuides()
     })
   }
 
   const handleDelete = (event, deletedGuide) =>{
     // axios.delete(`http://localhost:8000/guides/${event.target.value}`).then((response)=>{
-    axios.delete(`https://diyfrontend.herokuapp.com/guides/${event.target.value}`).then((response)=>{
+    axios.delete(`https://diybackend.herokuapp.com/guides/${event.target.value}`).then((response)=>{
       setGuides(guides.filter(guide => guide.id !== deletedGuide.id))
     })
   }
 
   const handleUpdate = (editGuide) =>{
     // axios.put(`http://localhost:8000/guides/${editGuide.id}`, editGuide).then((response)=>{
-    axios.put(`https://diyfrontend.herokuapp.com/guides/${editGuide.id}`, editGuide).then((response)=>{
+    axios.put(`https://diybackend.herokuapp.com/guides/${editGuide.id}`, editGuide).then((response)=>{
       getGuides()
     })
   }
