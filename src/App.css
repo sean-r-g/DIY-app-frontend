@@ -186,6 +186,13 @@ button:hover {
   margin-left: auto;
   margin-right: auto;
 }
+#heart-btn {
+  border: none;
+  display: inline;
+}
+#heart-btn img{
+  width: 25px;
+}
 
 #slide-title {
   font-size: 48px;

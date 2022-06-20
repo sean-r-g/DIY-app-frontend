@@ -21,8 +21,8 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
     e.preventDefault();
     console.log(user, pwd);
     axios
-    //   .post(`http://localhost:8000/register/`, {
-        .post(`https://diybackend.herokuapp.com/register/`, {
+      .post(`http://localhost:8000/register/`, {
+        // .post(`https://diybackend.herokuapp.com/register/`, {
         username: user,
         email: email,
         password: pwd,
@@ -37,8 +37,8 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    // const url = "http://localhost:8000/token/";
-    const url = 'https://diybackend.herokuapp.com/token/';
+    const url = "http://localhost:8000/token/";
+    // const url = 'https://diybackend.herokuapp.com/token/';
     axios
       .post(url, {
         username: user,
@@ -80,9 +80,9 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
 
   return (
     <>
-    <button id='loginmodal' variant="primary" onClick={handleShow}>
+    {!loggedIn ? <button id='loginmodal' variant="primary" onClick={handleShow}>
       Login
-    </button>
+    </button> : <button id='loginmodal' variant="primary" onClick={handleShow}>Log Out</button>}
 
     <Modal id='login-modal' show={show} onHide={handleClose}>
       <Modal.Header closeButton>
