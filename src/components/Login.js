@@ -77,6 +77,10 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
   const toggleCreateAcct = () => {
     setSignedUp(true)
   }
+  const toggleLogin = () => {
+    setLogin(false)
+    setSignedUp(false)
+  }
 
   return (
     <>
@@ -135,6 +139,9 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
             <br/>
             <br/>
             <button>Sign up!</button>
+            <br/>
+            <br/>
+            <button onClick={toggleLogin}>Login</button>
           </form>
         </section>
       ) : (
