@@ -20,3 +20,13 @@ HandyHome is an open source DIY video guide platform where users can view, add, 
 [Front End GitHub Repo](https://github.com/sean-r-g/DIY-app-frontend)
 
 [Back End GitHub Repo](https://github.com/sean-r-g/DIY-app-backend)
+
+## Technologies Used
+* Python
+* Django
+* PostgreSQL
+* React.js
+* Node.js
+* Heroku
+* React-Bootstrap
+* CSS
