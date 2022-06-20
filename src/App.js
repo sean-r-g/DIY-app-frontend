@@ -130,7 +130,7 @@ function App() {
               <p>Category: {guide.category}</p>
               <p>Creator: {guide.author}</p>
               <p>Length: {guide.length} min</p>
-              {loggedIn ? !saveItem ? <button id='heart-btn' onClick={toggleSaveItem} value={true}><img src="https://img.icons8.com/ios/50/undefined/like--v1.png"/></button> : <button id='heart-btn' onClick={toggleSaveItem} value={false}><img src="https://img.icons8.com/ios-filled/50/undefined/like--v1.png"/></button> : null}
+              {/* {loggedIn ? !saveItem ? <button id='heart-btn' onClick={toggleSaveItem} value={true}><img src="https://img.icons8.com/ios/50/undefined/like--v1.png"/></button> : <button id='heart-btn' onClick={toggleSaveItem} value={false}><img src="https://img.icons8.com/ios-filled/50/undefined/like--v1.png"/></button> : null} */}
               {loggedIn ? <Edit handleUpdate={handleUpdate} handleDelete={handleDelete} guide={guide}/> : null}
             </div>
           )
