@@ -16,5 +16,7 @@ HandyHome is an open source DIY video guide platform where users can view, add, 
 
 ## Links
 [HandyHome](https://diyfrontend.herokuapp.com/)
+
 [Front End GitHub Repo](https://github.com/sean-r-g/DIY-app-frontend)
+
 [Back End GitHub Repo](https://github.com/sean-r-g/DIY-app-backend)
