@@ -19,7 +19,6 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user, pwd);
     axios
       // .post(`https://localhost:8000/register/`, {
       .post(`https://diybackend.herokuapp.com/register/`, {
@@ -28,7 +27,6 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
         password: pwd,
       })
       .then((response, err) => {
-        console.log(response);
         alert(response.data.message);
         setSignedUp(true);
       })
@@ -59,12 +57,11 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
       })
   };
 
-  const getUserInfo = () => {
-    console.log(userInfo.username);
-    console.log(token);
-
-    console.log(userInfo);
-  };
+  // const getUserInfo = () => {
+  //   console.log(userInfo.username);
+  //   console.log(token);
+  //   console.log(userInfo);
+  // };
 
   const handleSignOut = async (e) => {
     e.preventDefault();
@@ -190,7 +187,7 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
           ) : (
             <>
               <h1> You're Logged in as {user}!</h1>
-              <button onClick={getUserInfo}>My Info</button>
+              {/* <button onClick={getUserInfo}>My Info</button> */}
               <button onClick={handleSignOut}>Sign Out</button>
             </>
           )}
