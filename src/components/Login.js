@@ -21,8 +21,8 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
     e.preventDefault();
     console.log(user, pwd);
     axios
-      // .post(`http://localhost:8000/register/`, {
-      .post(`http://diybackend.herokuapp.com/register/`, {
+      // .post(`https://localhost:8000/register/`, {
+      .post(`https://diybackend.herokuapp.com/register/`, {
         username: user,
         email: email,
         password: pwd,
@@ -40,8 +40,8 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    // const url = "http://localhost:8000/token/";
-    const url = "http://diybackend.herokuapp.com/token/"
+    // const url = "https://localhost:8000/token/";
+    const url = "https://diybackend.herokuapp.com/token/"
     axios
       .post(url, {
         username: user,
