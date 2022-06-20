@@ -21,13 +21,16 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
     e.preventDefault();
     console.log(user, pwd);
     axios
-      .post(`http://localhost:8000/register/`, {
-        // .post(`https://diybackend.herokuapp.com/register/`, {
+      // .post(`http://localhost:8000/register/`, {
+      .post(`http://diybackend.herokuapp.com/register/`, {
         username: user,
         email: email,
         password: pwd,
       })
-      .then((response) => {
+      .catch((err) => {
+        return alert(`${user} already exists. Please pick another username.`);
+      })
+      .then((response, err) => {
         console.log(response);
         alert(response.data.message);
         setSignedUp(true);
@@ -37,12 +40,15 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    const url = "http://localhost:8000/token/";
-    // const url = 'https://diybackend.herokuapp.com/token/';
+    // const url = "http://localhost:8000/token/";
+    const url = "http://diybackend.herokuapp.com/token/"
     axios
       .post(url, {
         username: user,
         password: pwd,
+      })
+      .catch((err) => {
+        return alert(`Wrong username or password. Try again...`);
       })
       .then((response) => {
         let accessToken = localStorage.setItem("token", response.data.access);
@@ -76,6 +82,10 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
 
   const toggleCreateAcct = () => {
     setSignedUp(true)
+  }
+  const toggleLogin = () => {
+    setLogin(false)
+    setSignedUp(false)
   }
 
   return (
@@ -135,6 +145,9 @@ const Login = ({user, setUser, loggedIn, setLogin}) => {
             <br/>
             <br/>
             <button>Sign up!</button>
+            <br/>
+            <br/>
+            <button onClick={toggleLogin}>Login</button>
           </form>
         </section>
       ) : (

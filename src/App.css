@@ -225,3 +225,18 @@ button:hover {
 #clear-filter {
   background-color: azure;
 }
+
+@media only screen and (max-width: 750px) {
+  #carousel {
+    display: none;
+  }
+  #logo {
+    margin-top: 10px;
+    width: 100px;
+    right: 0;
+    top: 0;
+    position: absolute;
+  }
+
+}
+

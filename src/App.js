@@ -20,29 +20,29 @@ function App() {
 
 //////CRUD Functions///////////
   const getGuides = () => {
-    axios.get('http://localhost:8000/guides').then((response)=>{
-    // axios.get('https://diybackend.herokuapp.com/guides').then((response)=>{
+    // axios.get('http://localhost:8000/guides').then((response)=>{
+    axios.get('https://diybackend.herokuapp.com/guides').then((response)=>{
       setGuides(response.data)
     })
   }
 
   const handleCreate = (addGuide) => {
-    axios.post('http://localhost:8000/guides', addGuide).then((response)=>{
-  // axios.post('https://diybackend.herokuapp.com/guides', addGuide).then((response)=>{  
+    // axios.post('http://localhost:8000/guides', addGuide).then((response)=>{
+  axios.post('https://diybackend.herokuapp.com/guides', addGuide).then((response)=>{  
       getGuides()
     })
   }
 
   const handleDelete = (event, deletedGuide) =>{
-    axios.delete(`http://localhost:8000/guides/${event.target.value}`).then((response)=>{
-    // axios.delete(`https://diybackend.herokuapp.com/guides/${event.target.value}`).then((response)=>{
+    // axios.delete(`http://localhost:8000/guides/${event.target.value}`).then((response)=>{
+    axios.delete(`https://diybackend.herokuapp.com/guides/${event.target.value}`).then((response)=>{
       setGuides(guides.filter(guide => guide.id !== deletedGuide.id))
     })
   }
 
   const handleUpdate = (editGuide) =>{
-    axios.put(`http://localhost:8000/guides/${editGuide.id}`, editGuide).then((response)=>{
-    // axios.put(`https://diybackend.herokuapp.com/guides/${editGuide.id}`, editGuide).then((response)=>{
+    // axios.put(`http://localhost:8000/guides/${editGuide.id}`, editGuide).then((response)=>{
+    axios.put(`https://diybackend.herokuapp.com/guides/${editGuide.id}`, editGuide).then((response)=>{
       getGuides()
     })
   }
@@ -130,8 +130,8 @@ function App() {
               <p>Category: {guide.category}</p>
               <p>Creator: {guide.author}</p>
               <p>Length: {guide.length} min</p>
-              {loggedIn ? !saveItem ? <button id='heart-btn' onClick={toggleSaveItem} value={true}><img src="https://img.icons8.com/ios/50/undefined/like--v1.png"/></button> : <button id='heart-btn' onClick={toggleSaveItem} value={false}><img src="https://img.icons8.com/ios-filled/50/undefined/like--v1.png"/></button> : null}
-              <Edit handleUpdate={handleUpdate} handleDelete={handleDelete} guide={guide}/>
+              {/* {loggedIn ? !saveItem ? <button id='heart-btn' onClick={toggleSaveItem} value={true}><img src="https://img.icons8.com/ios/50/undefined/like--v1.png"/></button> : <button id='heart-btn' onClick={toggleSaveItem} value={false}><img src="https://img.icons8.com/ios-filled/50/undefined/like--v1.png"/></button> : null} */}
+              {loggedIn ? <Edit handleUpdate={handleUpdate} handleDelete={handleDelete} guide={guide}/> : null}
             </div>
           )
         })}
