@@ -20,7 +20,7 @@ function App() {
 //////CRUD Functions///////////
   const getGuides = () => {
     // axios.get('http://localhost:8000/guides').then((response)=>{
-    axios.get('https://diyfrontend.herokuapp.com/guides/').then((response)=>{
+    axios.get('https://diyfrontend.herokuapp.com/guides').then((response)=>{
       setGuides(response.data)
     })
   }
@@ -34,7 +34,7 @@ function App() {
 
   const handleDelete = (event, deletedGuide) =>{
     // axios.delete(`http://localhost:8000/guides/${event.target.value}`).then((response)=>{
-    axios.delete(`https://diyfrontend.herokuapp.com//guides/${event.target.value}`).then((response)=>{
+    axios.delete(`https://diyfrontend.herokuapp.com/guides/${event.target.value}`).then((response)=>{
       setGuides(guides.filter(guide => guide.id !== deletedGuide.id))
     })
   }
