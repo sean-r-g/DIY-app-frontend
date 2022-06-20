@@ -4,7 +4,6 @@ import {useRef, useState, useEffect, useImperativeHandle} from 'react'
 import axios from 'axios'
 import Add from './components/Add'
 import Edit from './components/Edit'
-// import Intro from './components/Intro'
 import HeroSlider from './components/Carousel'
 import AddModal from './components/AddModal'
 import Intro from './components/Intro'
@@ -20,25 +19,29 @@ function App() {
   const [loggedIn, setLogin] = useState(false);
 //////CRUD Functions///////////
   const getGuides = () => {
-    axios.get('http://localhost:8000/guides').then((response)=>{
+    // axios.get('http://localhost:8000/guides').then((response)=>{
+    axios.get('https://diyfrontend.herokuapp.com/guides').then((response)=>{
       setGuides(response.data)
     })
   }
 
   const handleCreate = (addGuide) => {
-    axios.post('http://localhost:8000/guides', addGuide).then((response)=>{
+    // axios.post('http://localhost:8000/guides', addGuide).then((response)=>{
+  axios.post('https://diyfrontend.herokuapp.com/guides', addGuide).then((response)=>{  
       getGuides()
     })
   }
 
   const handleDelete = (event, deletedGuide) =>{
-    axios.delete(`http://localhost:8000/guides/${event.target.value}`).then((response)=>{
+    // axios.delete(`http://localhost:8000/guides/${event.target.value}`).then((response)=>{
+    axios.delete(`https://diyfrontend.herokuapp.com//guides/${event.target.value}`).then((response)=>{
       setGuides(guides.filter(guide => guide.id !== deletedGuide.id))
     })
   }
 
   const handleUpdate = (editGuide) =>{
-    axios.put(`http://localhost:8000/guides/${editGuide.id}`, editGuide).then((response)=>{
+    // axios.put(`http://localhost:8000/guides/${editGuide.id}`, editGuide).then((response)=>{
+    axios.put(`https://diyfrontend.herokuapp.com/guides/${editGuide.id}`, editGuide).then((response)=>{
       getGuides()
     })
   }
