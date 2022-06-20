@@ -20,7 +20,7 @@ function App() {
 //////CRUD Functions///////////
   const getGuides = () => {
     // axios.get('http://localhost:8000/guides').then((response)=>{
-    axios.get('https://diyfrontend.herokuapp.com/guides').then((response)=>{
+    axios.get('https://diyfrontend.herokuapp.com/guides/').then((response)=>{
       setGuides(response.data)
     })
   }
